@@ -3,29 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1112D4252538EB75003E7553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4242538EB75003E7553 /* AppDelegate.swift */; };
 		1112D4272538EB75003E7553 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4262538EB75003E7553 /* SceneDelegate.swift */; };
-		1112D4292538EB75003E7553 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4282538EB75003E7553 /* ViewController.swift */; };
+		1112D4292538EB75003E7553 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4282538EB75003E7553 /* SearchViewController.swift */; };
 		1112D42C2538EB75003E7553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1112D42A2538EB75003E7553 /* Main.storyboard */; };
 		1112D42F2538EB75003E7553 /* Empat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1112D42D2538EB75003E7553 /* Empat.xcdatamodeld */; };
 		1112D4312538EB78003E7553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1112D4302538EB78003E7553 /* Assets.xcassets */; };
 		1112D4342538EB78003E7553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1112D4322538EB78003E7553 /* LaunchScreen.storyboard */; };
+		1112D4452538EE46003E7553 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4442538EE46003E7553 /* DateFormatter+Extension.swift */; };
+		1112D4482538EE59003E7553 /* CollectionCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4472538EE59003E7553 /* CollectionCell+Extension.swift */; };
+		1112D44B2538EE6E003E7553 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D44A2538EE6E003E7553 /* JSONDecoder+Extension.swift */; };
+		1112D44E2538EED4003E7553 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D44D2538EED4003E7553 /* Item.swift */; };
+		1112D4542538F7E7003E7553 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4532538F7E7003E7553 /* NetworkService.swift */; };
+		1112D4572538F947003E7553 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D4562538F947003E7553 /* DataManager.swift */; };
+		1112D45C253916C0003E7553 /* ResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D45B253916C0003E7553 /* ResultTableCell.swift */; };
+		1112D46125391EAF003E7553 /* NSMuttableString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D46025391EAF003E7553 /* NSMuttableString+Extension.swift */; };
+		1112D47C253932C6003E7553 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D47B253932C6003E7553 /* FavouriteViewController.swift */; };
+		EFCC70AFE2B2EB91639A33CF /* Pods_Empat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D9140812E4F639E20427B2 /* Pods_Empat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EDF113C192DD05987C1FD3B /* Pods-Empat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empat.debug.xcconfig"; path = "Target Support Files/Pods-Empat/Pods-Empat.debug.xcconfig"; sourceTree = "<group>"; };
 		1112D4212538EB75003E7553 /* Empat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1112D4242538EB75003E7553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1112D4262538EB75003E7553 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1112D4282538EB75003E7553 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1112D4282538EB75003E7553 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1112D42B2538EB75003E7553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1112D42E2538EB75003E7553 /* Empat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Empat.xcdatamodel; sourceTree = "<group>"; };
 		1112D4302538EB78003E7553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1112D4332538EB78003E7553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1112D4352538EB78003E7553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1112D4442538EE46003E7553 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		1112D4472538EE59003E7553 /* CollectionCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionCell+Extension.swift"; sourceTree = "<group>"; };
+		1112D44A2538EE6E003E7553 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
+		1112D44D2538EED4003E7553 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1112D4532538F7E7003E7553 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1112D4562538F947003E7553 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1112D45B253916C0003E7553 /* ResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableCell.swift; sourceTree = "<group>"; };
+		1112D46025391EAF003E7553 /* NSMuttableString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMuttableString+Extension.swift"; sourceTree = "<group>"; };
+		1112D47B253932C6003E7553 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		A33C0AB9E4131912417BAB32 /* Pods-Empat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empat.release.xcconfig"; path = "Target Support Files/Pods-Empat/Pods-Empat.release.xcconfig"; sourceTree = "<group>"; };
+		E5D9140812E4F639E20427B2 /* Pods_Empat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCC70AFE2B2EB91639A33CF /* Pods_Empat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +67,8 @@
 			children = (
 				1112D4232538EB75003E7553 /* Empat */,
 				1112D4222538EB75003E7553 /* Products */,
+				650A3A65B1B362C9700EF0F7 /* Pods */,
+				F3388BCE78B21181DFC11B8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +85,96 @@
 			children = (
 				1112D4242538EB75003E7553 /* AppDelegate.swift */,
 				1112D4262538EB75003E7553 /* SceneDelegate.swift */,
-				1112D4282538EB75003E7553 /* ViewController.swift */,
-				1112D42A2538EB75003E7553 /* Main.storyboard */,
+				1112D46625392B01003E7553 /* ViewControllers */,
+				1112D45E253916CA003E7553 /* TableViewCells */,
+				1112D46425392AF8003E7553 /* Models */,
+				1112D46825392B0F003E7553 /* Storyboards */,
+				1112D46925392B1E003E7553 /* Services */,
+				1112D46A25392B25003E7553 /* DataManager */,
+				1112D4512538F7CF003E7553 /* Extensions */,
 				1112D4302538EB78003E7553 /* Assets.xcassets */,
-				1112D4322538EB78003E7553 /* LaunchScreen.storyboard */,
 				1112D4352538EB78003E7553 /* Info.plist */,
 				1112D42D2538EB75003E7553 /* Empat.xcdatamodeld */,
 			);
 			path = Empat;
+			sourceTree = "<group>";
+		};
+		1112D4512538F7CF003E7553 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1112D4442538EE46003E7553 /* DateFormatter+Extension.swift */,
+				1112D4472538EE59003E7553 /* CollectionCell+Extension.swift */,
+				1112D44A2538EE6E003E7553 /* JSONDecoder+Extension.swift */,
+				1112D46025391EAF003E7553 /* NSMuttableString+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1112D45E253916CA003E7553 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1112D45B253916C0003E7553 /* ResultTableCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		1112D46425392AF8003E7553 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1112D44D2538EED4003E7553 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1112D46625392B01003E7553 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1112D4282538EB75003E7553 /* SearchViewController.swift */,
+				1112D47B253932C6003E7553 /* FavouriteViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1112D46825392B0F003E7553 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1112D42A2538EB75003E7553 /* Main.storyboard */,
+				1112D4322538EB78003E7553 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1112D46925392B1E003E7553 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1112D4532538F7E7003E7553 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1112D46A25392B25003E7553 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1112D4562538F947003E7553 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		650A3A65B1B362C9700EF0F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EDF113C192DD05987C1FD3B /* Pods-Empat.debug.xcconfig */,
+				A33C0AB9E4131912417BAB32 /* Pods-Empat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F3388BCE78B21181DFC11B8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9140812E4F639E20427B2 /* Pods_Empat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1112D4382538EB78003E7553 /* Build configuration list for PBXNativeTarget "Empat" */;
 			buildPhases = (
+				8B6D937EFA0D0E4D7ADC5F63 /* [CP] Check Pods Manifest.lock */,
 				1112D41D2538EB75003E7553 /* Sources */,
 				1112D41E2538EB75003E7553 /* Frameworks */,
 				1112D41F2538EB75003E7553 /* Resources */,
+				10BE96E044DD13A68AD85DDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,15 +244,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10BE96E044DD13A68AD85DDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Empat/Pods-Empat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Empat/Pods-Empat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Empat/Pods-Empat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B6D937EFA0D0E4D7ADC5F63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Empat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1112D41D2538EB75003E7553 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1112D4292538EB75003E7553 /* ViewController.swift in Sources */,
+				1112D4542538F7E7003E7553 /* NetworkService.swift in Sources */,
+				1112D4292538EB75003E7553 /* SearchViewController.swift in Sources */,
+				1112D44E2538EED4003E7553 /* Item.swift in Sources */,
 				1112D42F2538EB75003E7553 /* Empat.xcdatamodeld in Sources */,
+				1112D4452538EE46003E7553 /* DateFormatter+Extension.swift in Sources */,
+				1112D46125391EAF003E7553 /* NSMuttableString+Extension.swift in Sources */,
 				1112D4252538EB75003E7553 /* AppDelegate.swift in Sources */,
+				1112D4482538EE59003E7553 /* CollectionCell+Extension.swift in Sources */,
+				1112D47C253932C6003E7553 /* FavouriteViewController.swift in Sources */,
+				1112D4572538F947003E7553 /* DataManager.swift in Sources */,
+				1112D44B2538EE6E003E7553 /* JSONDecoder+Extension.swift in Sources */,
 				1112D4272538EB75003E7553 /* SceneDelegate.swift in Sources */,
+				1112D45C253916C0003E7553 /* ResultTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,12 +447,14 @@
 		};
 		1112D4392538EB78003E7553 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EDF113C192DD05987C1FD3B /* Pods-Empat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27SYK7U5JH;
 				INFOPLIST_FILE = Empat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +468,14 @@
 		};
 		1112D43A2538EB78003E7553 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A33C0AB9E4131912417BAB32 /* Pods-Empat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27SYK7U5JH;
 				INFOPLIST_FILE = Empat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
