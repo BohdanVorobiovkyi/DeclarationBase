@@ -117,7 +117,7 @@ class DataManager: NSObject, InternetConnection {
                 return ItemExistanceModel(isExist: false, isError: nil, isUpdated: nil)
             }
             let resultItem = results.first as! SavedItem
-            print(resultItem.userComment, comment )
+//            print(resultItem.userComment, comment )
             if resultItem.userComment != comment {
                 return ItemExistanceModel(isExist: true, isError: nil, isUpdated: true)
             }
@@ -199,7 +199,7 @@ class DataManager: NSObject, InternetConnection {
             savedItem.setValue(Date(), forKey: "lastUpdate")
             try persistentContainer.viewContext.save()
         } catch {
-            print("Error update with comment", comment, "for id: \(itemID)")
+            print("Error update with comment", comment as Any, "for id: \(itemID)")
         }
     }
     

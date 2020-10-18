@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SearchResult: Codable {
+struct SearchResult: Decodable {
     let page: Page?
     let items: [Item]?
 }
 
-struct Item: Codable {
+struct Item: Decodable {
     let id: String
     let firstname, lastname, placeOfWork: String?
     let position: String?
@@ -21,7 +21,7 @@ struct Item: Codable {
     let lastUpdate: Date? 
 }
 
-struct Page: Codable {
+struct Page: Decodable {
     let batchSize,currentPage: Int?
     let totalItems: String?
     
