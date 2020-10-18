@@ -39,13 +39,14 @@ class SearchViewController: UIViewController, InternetConnection {
         setupTableView()
         setTitle()
         dataManager = DataManager()
-        dataManager?.getRequest(searchText: searchBar.text ?? "", completion: { [weak self] (items) in
-            if let items = items {
-            self?.items = items
-            } else {
-                self?.showDefaultAlert(title: "Інтернет не доступний", message: "Підключіть інтернет та спробуйте ще раз")
-            }
-        })
+//        items = []
+//        dataManager?.getRequest(searchText: searchBar.text ?? "", completion: { [weak self] (items) in
+//            if let items = items {
+//            self?.items = items
+//            } else {
+//                self?.showDefaultAlert(title: "Інтернет не доступний", message: "Підключіть інтернет та спробуйте ще раз")
+//            }
+//        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
