@@ -11,7 +11,7 @@ import CoreData
 import MBProgressHUD
 
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, InternetConnection {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableVeiw: UITableView!
@@ -34,16 +34,17 @@ class SearchViewController: UIViewController {
         
         self.tabBarController?.tabBar.tintColor = .darkGray
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.isHidden = false
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 28))
-        label.attributedText = NSMutableAttributedString().bold("Державний реєстр декларацій")
-        self.navigationItem.titleView = label
+        
         setupSearchBar()
         setupTableView()
-    
+        setTitle()
         dataManager = DataManager()
         dataManager?.getRequest(searchText: searchBar.text ?? "", completion: { [weak self] (items) in
+            if let items = items {
             self?.items = items
+            } else {
+                self?.showDefaultAlert(title: "Інтернет не доступний", message: "Підключіть інтернет та спробуйте ще раз")
+            }
         })
     }
     
@@ -52,6 +53,12 @@ class SearchViewController: UIViewController {
         
     }
     
+    private func setTitle() {
+        self.navigationController?.navigationBar.isHidden = false
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 28))
+        label.attributedText = NSMutableAttributedString().bold("Державний реєстр декларацій")
+        self.navigationItem.titleView = label
+    }
     
     private func setupSearchBar() {
         searchBar.delegate = self
@@ -123,7 +130,11 @@ extension SearchViewController: UISearchBarDelegate {
         if let text = searchBar.text , text.count > 0 {
             ProgressHUD.show()
             dataManager?.getRequest(searchText: searchBar.text ?? "", completion: { [weak self] (items) in
-                self?.items = items
+                if let items = items {
+                    self?.items = items
+                } else {
+                    self?.showDefaultAlert(title: "Інтернет не доступний", message: "Підключіть інтернет та спробуйте ще раз")
+                }
                 ProgressHUD.dismiss()
             })
         }

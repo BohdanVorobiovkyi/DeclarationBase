@@ -24,6 +24,7 @@
 		1112D46125391EAF003E7553 /* NSMuttableString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D46025391EAF003E7553 /* NSMuttableString+Extension.swift */; };
 		1112D47C253932C6003E7553 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D47B253932C6003E7553 /* FavouriteViewController.swift */; };
 		1112D48D253B0A6B003E7553 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D48C253B0A6B003E7553 /* WebViewController.swift */; };
+		1112D49A253CF92E003E7553 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1112D499253CF92E003E7553 /* Reachability.swift */; };
 		EFCC70AFE2B2EB91639A33CF /* Pods_Empat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D9140812E4F639E20427B2 /* Pods_Empat.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		1112D46025391EAF003E7553 /* NSMuttableString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMuttableString+Extension.swift"; sourceTree = "<group>"; };
 		1112D47B253932C6003E7553 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		1112D48C253B0A6B003E7553 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1112D499253CF92E003E7553 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A33C0AB9E4131912417BAB32 /* Pods-Empat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Empat.release.xcconfig"; path = "Target Support Files/Pods-Empat/Pods-Empat.release.xcconfig"; sourceTree = "<group>"; };
 		E5D9140812E4F639E20427B2 /* Pods_Empat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Empat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1112D4532538F7E7003E7553 /* NetworkService.swift */,
+				1112D499253CF92E003E7553 /* Reachability.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				1112D46125391EAF003E7553 /* NSMuttableString+Extension.swift in Sources */,
 				1112D4252538EB75003E7553 /* AppDelegate.swift in Sources */,
 				1112D4482538EE59003E7553 /* CollectionCell+Extension.swift in Sources */,
+				1112D49A253CF92E003E7553 /* Reachability.swift in Sources */,
 				1112D47C253932C6003E7553 /* FavouriteViewController.swift in Sources */,
 				1112D4572538F947003E7553 /* DataManager.swift in Sources */,
 				1112D44B2538EE6E003E7553 /* JSONDecoder+Extension.swift in Sources */,

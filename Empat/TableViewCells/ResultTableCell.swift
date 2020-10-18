@@ -38,6 +38,9 @@ class ResultTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        fullNameLabel.text = ""
+        positionLabel.text = ""
+        workPlaceLabel.text = ""
         positionLabel.text = ""
         pdfButton.isHidden = true
         pdfButton.addTarget(self, action: #selector(openURL(_:)), for: .touchUpInside)

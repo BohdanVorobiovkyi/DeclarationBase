@@ -5,10 +5,10 @@
 //  Created by Богдан Воробйовський on 16.10.2020.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-class DataManager: NSObject {
+class DataManager: NSObject, InternetConnection {
     
     enum Status {
         case checked
@@ -217,27 +217,30 @@ class DataManager: NSObject {
         }
     }
     
-    func getRequest(searchText: String, completion: @escaping (([Item]) -> Void)) {
-        
-        NetworkService.performRequest(querry: searchText, cahcePolicy: .reloadIgnoringLocalAndRemoteCacheData) { (result) in
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let data):
-                print(data)
-                
-                do {
-                    let searchResults = try JSONDecoder().decode(SearchResult.self, from: data)
-                    if let items = searchResults.items {
-                        completion(items)
-                    } else {
-                        completion([])
+    func getRequest(searchText: String, completion: @escaping (([Item]?) -> Void)) {
+        if checkInternetConnection() == true {
+            NetworkService.performRequest(querry: searchText, cahcePolicy: .reloadIgnoringLocalAndRemoteCacheData) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let data):
+                    print(data)
+                    
+                    do {
+                        let searchResults = try JSONDecoder().decode(SearchResult.self, from: data)
+                        if let items = searchResults.items {
+                            completion(items)
+                        } else {
+                            completion([])
+                        }
+                    } catch {
+                        let nserror = error as NSError
+                        print("Decoding error \(nserror), \(nserror.userInfo)")
                     }
-                } catch {
-                    let nserror = error as NSError
-                    print("Decoding error \(nserror), \(nserror.userInfo)")
                 }
             }
+        } else {
+            completion(nil)
         }
     }
 }

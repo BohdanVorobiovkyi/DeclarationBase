@@ -18,13 +18,20 @@ class FavouriteViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        title = "Обрані"
+        setTitle()
         setupTableView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    private func setTitle() {
+        self.navigationController?.navigationBar.isHidden = false
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 28))
+        label.textAlignment = .center
+        label.attributedText = NSMutableAttributedString().bold("Обрані")
+        self.navigationItem.titleView = label
     }
     
     private func setupTableView() {
@@ -48,6 +55,7 @@ class FavouriteViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! ResultTableCell
+        cell.favButton.isHidden = true
         let fetchedObject = dataManager.fetchItems()[indexPath.row]
         let item = Item(id: fetchedObject.id ?? "", firstname: fetchedObject.firstName ?? "", lastname: fetchedObject.lastName ?? "", placeOfWork: fetchedObject.placeOfWork ?? nil, position: fetchedObject.position ?? "", linkPDF: fetchedObject.linkPDF ?? "", comment: fetchedObject.userComment, lastUpdate: Date())
         cell.configureCell(model: item)
