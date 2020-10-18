@@ -30,6 +30,8 @@ class SearchViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.tabBarController?.tabBar.tintColor = .darkGray
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = false
@@ -56,6 +58,7 @@ class SearchViewController: UIViewController {
         searchBar.showsCancelButton = true
         searchBar.isTranslucent = true
         
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Скинути"
         // Cancel Button Color
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.lightGray], for: .disabled)
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.lightGray], for: .disabled)
@@ -73,19 +76,37 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items?.count == 0 {
+            return 1
+        }
         return items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? ResultTableCell else {return ResultTableCell()}
+        if items?.count == 0 {
+            cell.fullNameLabel.textAlignment = .natural
+            cell.favButton.isHidden = true
+            cell.isUserInteractionEnabled = false
+            
+            let searchQuerry = searchBar.text ?? " "
+            cell.positionLabel.text = "Нічого не знайдено по запиту: \"\(searchQuerry)\""
+            cell.positionLabel.textAlignment = .center
+            cell.positionLabel.adjustsFontSizeToFitWidth = true
+            return cell
+        }
         if let items = items {
             cell.configureCell(model: items[indexPath.row])
             cell.delegate = self
             cell.starDelegate = self
             return cell
         }
+        
         return ResultTableCell()
     }
     
@@ -120,7 +141,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        ProgressHUD.show()
+//        ProgressHUD.show()
         self.searchBar.text?.removeAll()
         self.searchBar.showsCancelButton = true
         items = []

@@ -85,6 +85,9 @@ class ResultTableCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        positionLabel.textAlignment = .left
+        favButton.isHidden = false
+        isUserInteractionEnabled = true
         fullNameLabel.text = ""
         positionLabel.text = ""
         workPlaceLabel.text = ""

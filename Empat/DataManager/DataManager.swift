@@ -103,7 +103,7 @@ class DataManager: NSObject {
         let existanceModel: ItemExistanceModel = checkIfExist(item: item, comment: "")
         if let isExist = existanceModel.isExist {
             if isExist == true {
-                removeItem(item: item)
+                removeItem(itemId: item.id)
             }
         }
     }
@@ -127,18 +127,19 @@ class DataManager: NSObject {
         }
     }
     
-    func removeItem(item: Item) {
+    func removeItem(itemId: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedItem")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", item.id)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", itemId)
         fetchRequest.returnsObjectsAsFaults = false
         do {
             let results = try persistentContainer.viewContext.fetch(fetchRequest)
             for object in results {
                 guard let objectData = object as? NSManagedObject else {continue}
                 persistentContainer.viewContext.delete(objectData)
+                try persistentContainer.viewContext.save()
             }
         } catch let error {
-            print("Remove item \(item.id) in SavedItem entity error :", error)
+            print("Remove item \(itemId) in SavedItem entity error :", error)
         }
     }
     

@@ -12,6 +12,9 @@ class FavouriteViewController: UITableViewController {
     
     private var reuseIdentifier = "tableFavCell"
     private let dataManager = DataManager()
+    private var items: [SavedItem] {
+        return dataManager.fetchItems()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,25 @@ class FavouriteViewController: UITableViewController {
         return hud
     }
     
+    
+    private func makeDeleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
+           return UIContextualAction(style: .destructive, title: "Видалити") { [weak self] (action, swipeButtonView, completion) in
+               print("DELETE HERE")
+            if let id = self?.items[indexPath.row].id {
+                self?.dataManager.removeItem(itemId: id )
+               completion(true)
+                self?.tableView.reloadData()
+            }
+           }
+       }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           return UISwipeActionsConfiguration(actions: [
+               makeDeleteContextualAction(forRowAt: indexPath)
+           ])
+       }
+
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard (tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? ResultTableCell) != nil else {return}
         tableView.deselectRow(at: indexPath, animated: true)
@@ -87,7 +109,6 @@ class FavouriteViewController: UITableViewController {
                     case .error:
                         hud?.label.text = "Помилка в зміні комментаря"
                     }
-                    
                     hud?.show(animated: true)
                     hud?.hide(animated: true, afterDelay: 1.5)
                 }
