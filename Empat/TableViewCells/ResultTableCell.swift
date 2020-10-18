@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol PDFSelected: class {
+protocol PDFSelectedDelegate: class {
     func openWebVC(with url: URL)
+}
+
+protocol StarSelectedDelegate: class {
+    func starSelected(item: Item)
 }
 
 class ResultTableCell: UITableViewCell {
@@ -18,14 +22,23 @@ class ResultTableCell: UITableViewCell {
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var pdfButton: UIButton!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var favButton: UIButton!
     
-    weak var delegate: PDFSelected?
+    @IBAction func selectFavAction(_ sender: Any) {
+        if let savedItem = item {
+        starDelegate?.starSelected(item: savedItem)
+        }
+    }
     
+    weak var delegate: PDFSelectedDelegate?
+    weak var starDelegate: StarSelectedDelegate?
+    
+    private var item: Item?
     private var link: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        positionLabel.text = ""
         pdfButton.isHidden = true
         pdfButton.addTarget(self, action: #selector(openURL(_:)), for: .touchUpInside)
         commentLabel.text = ""
@@ -39,7 +52,7 @@ class ResultTableCell: UITableViewCell {
     }
     
     func configureCell(model: Item) {
-
+        self.item = model
         if let name = model.firstname, let lastName = model.lastname {
         let nameString = NSMutableAttributedString().normal("\(lastName) \(name) ")
         fullNameLabel.attributedText = nameString
@@ -48,7 +61,7 @@ class ResultTableCell: UITableViewCell {
         let workPlaceString = NSMutableAttributedString().bold("Місце роботи: ").normal(place)
             workPlaceLabel.attributedText = workPlaceString
         }
-        if let position = model.position {
+        if let position = model.position, position != ""{
             positionLabel.attributedText = NSMutableAttributedString().bold("Позиція: ").normal(position)
         }
         if let link = model.linkPDF, link != "" {
@@ -66,10 +79,9 @@ class ResultTableCell: UITableViewCell {
     
     @objc private func openURL(_ sender: UIButton) {
         
-        print("PDF button pressed with link \(link)")
+        print("PDF button pressed with link \(String(describing: link))")
         guard let stringLink = link , let url = URL(string: stringLink) else {return}
         delegate?.openWebVC(with: url)
-//        UIApplication.shared.open(url)
     }
     
     override func prepareForReuse() {
