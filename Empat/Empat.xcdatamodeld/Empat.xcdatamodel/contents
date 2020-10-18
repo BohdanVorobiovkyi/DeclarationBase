@@ -3,13 +3,15 @@
     <entity name="SavedItem" representedClassName="SavedItem" syncable="YES" codeGenerationType="class">
         <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="linkPDF" optional="YES" attributeType="String"/>
         <attribute name="placeOfWork" optional="YES" attributeType="String"/>
         <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="userComment" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SavedItem" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="SavedItem" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
